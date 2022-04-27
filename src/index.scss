@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Roboto";
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+  }
+
+.menu-item {
+  @apply font-medium text-2xl mix-blend-multiply capitalize
+}
