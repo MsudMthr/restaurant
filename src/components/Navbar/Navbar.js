@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center w-full">
       <div>
-        <img src={BurgerIcon} alt="Burger" className="mt-5 mx-auto" />
+        <img src={BurgerIcon} alt="Burger" className="mt-5 mx-[52px]" />
       </div>
       <Menu />
       <Icons />
