@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ServiceItem from "./ServiceItem";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //image
 import order from "../../asset/clip-order-completed-3 1.png";
@@ -26,17 +29,31 @@ const data = [
 ];
 
 const Service = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="flex flex-col justify-center items-center mt-20 text-Roboto">
-      <p className="text-[#EC6083] uppercase text-lg leading-[18px] ">
+      <p
+        className="smallTitle "
+        data-aos="fade-right"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+      >
         What we serve
       </p>
 
-      <h1 className="font-bold text-5xl leading-[50px] sm:w-[444px] text-center mt-2">
+      <h1
+        className="title sm:w-[444px]"
+        data-aos="fade-left"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+      >
         your favourite food delivery partner
       </h1>
 
-      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
         {data.map((item) => (
           <ServiceItem data={item} key={item.title} />
         ))}

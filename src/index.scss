@@ -11,3 +11,11 @@
 .menu-item {
   @apply font-semibold lg:text-2xl text-base  capitalize
 }
+
+.smallTitle {
+  @apply text-[#EC6083] uppercase text-lg leading-[18px]
+}
+
+.title {
+  @apply font-bold text-5xl leading-[50px]  text-center mt-2
+}

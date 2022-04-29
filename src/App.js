@@ -1,5 +1,6 @@
 import "./App.scss";
 import Header from "./components/Header";
+import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Navbar/Navbar";
 import Service from "./components/OurServices/Service";
 
@@ -11,6 +12,7 @@ function App() {
           <Navbar />
           <Header />
           <Service />
+          <Menu />
         </div>
       </div>
     </div>
