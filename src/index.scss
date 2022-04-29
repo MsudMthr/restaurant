@@ -19,3 +19,14 @@
 .title {
   @apply font-bold text-5xl leading-[50px]  text-center mt-2
 }
+
+
+input[type="radio"] + label {
+  width: 50px;
+  transition: .3s all ease-in-out;
+  z-index: 1000;
+}
+
+input[type="radio"]:checked + label {
+  width: 210px;
+}
