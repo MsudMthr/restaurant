@@ -6,10 +6,10 @@ import user from '../../asset/icons/User.svg'
 const Icons = () => {
     return (
         <div>
-            <ul className='justify-between flex w-56 mx-auto items-center mr-4'>    
-                <li className='bg-[#EC6083] p-4 rounded-3xl'><a href='s' className=' h-14 '><img src={search} alt="search" className='h-6' /></a></li>
-                <li className='bg-[#A18EE5] p-4 rounded-3xl'><a href='s' className=' h-14 '><img src={cart} alt="cart" className='h-6' /></a></li>
-                <li className='bg-[#212135] p-4 rounded-3xl'><a href='s' className=' h-14 '><img src={user} alt="user" className='h-6' /></a></li>
+            <ul className='justify-around flex flex-col sm:flex-row lg:w-56 sm:w-36 gap-4 sm:gap-0 mx-auto items-center mr-4'>    
+                <li className='bg-[#EC6083] lg:p-4 p-3 rounded-2xl'><a href='s' className=' h-14  '><img src={search} alt="search" className='h-4' /></a></li>
+                <li className='bg-[#A18EE5] lg:p-4 p-3 rounded-2xl'><a href='s' className=' h-14  '><img src={cart} alt="cart" className='h-4' /></a></li>
+                <li className='bg-[#212135] lg:p-4 p-3 rounded-2xl'><a href='s' className=' h-14  '><img src={user} alt="user" className='h-4' /></a></li>
             </ul>
         </div>
     );
