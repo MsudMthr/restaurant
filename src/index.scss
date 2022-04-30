@@ -4,12 +4,12 @@
 
 
 @font-face {
-    font-family: "Roboto";
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
-  }
+  font-family: "Roboto";
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+}
 
 .menu-item {
-  @apply font-semibold lg:text-2xl text-base  capitalize
+  @apply font-semibold lg:text-2xl text-base capitalize
 }
 
 .smallTitle {
@@ -17,16 +17,82 @@
 }
 
 .title {
-  @apply font-bold text-5xl leading-[50px]  text-center mt-2
+  @apply font-bold text-5xl leading-[50px] text-center mt-2
 }
 
 
-input[type="radio"] + label {
-  width: 50px;
-  transition: .3s all ease-in-out;
-  z-index: 1000;
+
+input[type="radio"] {
+  +label {
+    width: 50px;
+    transition: .3s all ease-in-out;
+    z-index: 1000;
+    height: 50px;
+
+    img {
+      width: 40px;
+    }
+
+    span {
+      opacity: 0;
+      width: 0;
+      transition: .3s all ease-in-out;
+    }
+  }
+
+  &:checked {
+    +label {
+      width: 210px;
+
+      img {
+        width: 40px;
+
+      }
+
+      span {
+        opacity: 100;
+        width: auto;
+      }
+    }
+
+  }
 }
 
-input[type="radio"]:checked + label {
-  width: 210px;
+@media (max-width:"1024px") {
+  input[type="radio"] {
+    +label {
+      width: 50px;
+      transition: .3s all ease-in-out;
+      z-index: 1000;
+      height: 50px;
+
+      img {
+        width: 40px;
+      }
+
+      span {
+        opacity: 0;
+        width: 0;
+      }
+    }
+
+    &:checked {
+      +label {
+        width: 150px !important;
+
+        img {
+          width: 40px;
+
+        }
+
+        span {
+          opacity: 100;
+          font-size: 15px;
+          width: auto;
+          }
+      }
+
+    }
+  }
+
 }
