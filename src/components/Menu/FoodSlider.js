@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+
+//context
+import { foodProvider } from "../../Context/FoodContextProvider";
+//image
+import humber from "../../asset/burger1 1.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,29 +12,49 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-
 // import required modules
-import { EffectCards } from "swiper";
+import { Pagination } from "swiper";
+import FoodCard from "./FoodCard";
 
 const FoodSlider = () => {
+  const [foods, setFoods] = useState([]);
+
+  const food = useContext(foodProvider);
+
+  useEffect(() => {
+    setFoods(food.hints);
+  }, [food]);
+  console.log(foods);
+
   return (
-    <div className="w-9/12 flex justify-center items-center">
+    <div className="w-full overflow-hidden flex justify-center items-center z-0">
       <Swiper
-        effect={"cards"}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="w-60 h-80"
-        
+        slidesPerView={4}
+        spaceBetween={64}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="w-full h-full z-0 overflow-visible py-10 "
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {foods ? (
+          <div className="flex gap-12 w-full ">
+            {foods.map((food) => (
+              <>
+                <SwiperSlide
+                  key={food.food.foodId}
+                  
+                  className="-z-10 overflow-visible w-[300px] h-[400px] py-10 "
+                >
+                  <FoodCard food={food.food} img={humber} price={"$35"} />
+                </SwiperSlide>
+              </>
+            ))}
+          </div>
+        ) : (
+          <h1>loading ...</h1>
+        )}
       </Swiper>
     </div>
   );

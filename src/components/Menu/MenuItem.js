@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MenuItem = ({ data, changeHandler, menu }) => {
   console.log();
@@ -12,14 +12,12 @@ const MenuItem = ({ data, changeHandler, menu }) => {
         id={data.category}
         onClick={changeHandler}
         className="hidden"
-        value={menu}  
+        value={menu}
         onChange={() => data.category === menu && "checked"}
         checked={data.category === menu && true}
-          
       />
       <label
         htmlFor={data.category}
-        onClick={() => Navigate(`?sortBy=${data.category}`)}
         className={`flex justify-start items-center bg-[#A18EE5]  p-2 rounded-full shadow-md shadow-[#A18EE5]   `}
       >
         <div className="bg-[#E9F3FD] rounded-full flex justify-center items-center z-20 ">

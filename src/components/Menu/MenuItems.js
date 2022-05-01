@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate , Link } from "react-router-dom";
-
+import { useNavigate, Link } from "react-router-dom";
 
 import queryString from "query-string";
 
 import MenuItem from "./MenuItem";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //images
 import all from "../../asset/Refreshments.png";
@@ -47,18 +49,23 @@ const data = [
 ];
 
 const MenuItems = (props) => {
-  const [menu, setMenu] = useState("all dishes");
+  const navigate = useNavigate();
+  const [menu, setMenu] = useState(() => {
+    if (queryString.category) {
+      return queryString.category;
+    } else {
+      return "all dishes";
+    }
+  });
   const [query, setQuery] = useState([]);
 
-  // const navigate = useNavigate();
-
-  //   useEffect(() => {
-  //       setQuery(queryString.parse(window.location.search));
-  //     },[menu]);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const changeHandler = (event) => {
     setMenu(event.target.id);
-    // navigate(`?category=${event.target.id}`)
+    navigate(`?category=${menu}`);
   };
 
   //   console.log(query);
@@ -66,16 +73,19 @@ const MenuItems = (props) => {
 
   return (
     <div>
-      <ul className="md:w-full flex md:flex-col justify-center flex-wrap   gap-4 mt-16 md:border-r-2 md:pr-5 md:border-b-0 border-b-2 pb-2 border-[#EC6083]">
+      <ul
+        data-aos="fade-in"
+        data-aos-offset="100"
+        data-aos-easing="ease-in-sine"
+        className="md:w-full flex md:flex-col justify-center flex-wrap   gap-4 mt-16 md:border-r-2 md:pr-5 md:border-b-0 border-b-2 pb-2 border-[#EC6083]"
+      >
         {data.map((item) => (
-          <Link to={`?category=${item.category}`}>
           <MenuItem
             data={item}
             key={item.category}
             changeHandler={changeHandler}
             menu={menu}
           />
-          </Link>
         ))}
       </ul>
     </div>
