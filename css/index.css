@@ -7,6 +7,74 @@
 }
 
 .menu-item {
-  @apply font-semibold lg:text-2xl text-base  capitalize;
+  @apply font-semibold lg:text-2xl text-base capitalize;
+}
+
+.smallTitle {
+  @apply text-[#EC6083] uppercase text-lg leading-[18px];
+}
+
+.title {
+  @apply font-bold text-5xl leading-[50px] text-center mt-2;
+}
+
+input[type="radio"] + label {
+  width: 50px;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  z-index: 1000;
+  height: 50px;
+}
+
+input[type="radio"] + label img {
+  width: 40px;
+}
+
+input[type="radio"] + label span {
+  opacity: 0;
+  width: 0;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+input[type="radio"]:checked + label {
+  width: 210px;
+}
+
+input[type="radio"]:checked + label img {
+  width: 40px;
+}
+
+input[type="radio"]:checked + label span {
+  opacity: 100;
+  width: auto;
+}
+
+@media (max-width: 1024px) {
+  input[type="radio"] + label {
+    width: 50px;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    z-index: 1000;
+    height: 50px;
+  }
+  input[type="radio"] + label img {
+    width: 40px;
+  }
+  input[type="radio"] + label span {
+    opacity: 0;
+    width: 0;
+  }
+  input[type="radio"]:checked + label {
+    width: 150px !important;
+  }
+  input[type="radio"]:checked + label img {
+    width: 40px;
+  }
+  input[type="radio"]:checked + label span {
+    opacity: 100;
+    font-size: 15px;
+    width: auto;
+  }
 }
 /*# sourceMappingURL=index.css.map */

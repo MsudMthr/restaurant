@@ -6,6 +6,7 @@
 @font-face {
   font-family: "Roboto";
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+
 }
 
 .menu-item {
@@ -17,7 +18,7 @@
 }
 
 .title {
-  @apply font-bold text-5xl leading-[50px] text-center mt-2
+  @apply font-bold lg:text-5xl text-4xl text-center  lg:text-left mt-2 leading-[50px]
 }
 
 
@@ -89,7 +90,7 @@ input[type="radio"] {
           opacity: 100;
           font-size: 15px;
           width: auto;
-          }
+        }
       }
 
     }

@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Navbar/Navbar";
 import Service from "./components/OurServices/Service";
+import Comments from "./components/Comments";
 
 function App() {
   const queryStrings = queryString.parse(window.location.search);
@@ -26,6 +27,7 @@ function App() {
             <Header />
             <Service />
             <Menu />
+            <Comments />
           </div>
         </div>
       </div>
