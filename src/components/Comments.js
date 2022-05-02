@@ -15,7 +15,7 @@ const Comments = () => {
         <h1 className="title  mt-5 mb-8 capitalize w-80 md:w-[450px]">
           what our customer say about us
         </h1>
-        <p className="text-center text-lg leading-6 w-3/6 sm:w-[450px]">
+        <p className="text-center text-lg leading-6 w-6/6 sm:w-[450px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit
           varius eget pulvinar rhoncus eros, magna. Orci sed aenean scelerisque
           arcu. Venenatis odio etiam bibendum in nulla.

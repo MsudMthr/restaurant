@@ -8,6 +8,7 @@ import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Navbar/Navbar";
 import Service from "./components/OurServices/Service";
 import Comments from "./components/Comments";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const queryStrings = queryString.parse(window.location.search);
@@ -28,6 +29,7 @@ function App() {
             <Service />
             <Menu />
             <Comments />
+            <Footer />
           </div>
         </div>
       </div>

@@ -21,6 +21,13 @@
   @apply font-bold lg:text-5xl text-4xl text-center  lg:text-left mt-2 leading-[50px]
 }
 
+.footer-header {
+  @apply text-2xl font-medium mb-6;
+}
+
+.footer-items {
+  @apply text-lg opacity-50
+}
 
 
 input[type="radio"] {
